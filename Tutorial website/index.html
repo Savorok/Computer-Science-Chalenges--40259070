@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 40px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Active/current link */
+.navbar a.active {
+  background-color: #666;
+  color: white;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+.accordion {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+    }
+    
+    .active, .accordion:hover {
+      background-color: #ccc; 
+    }
+    
+    .panel {
+      padding: 0 18px;
+      display: none;
+      background-color: white;
+      overflow: hidden;
+    }
+
+    .accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+</style>
+</head>
+<body>
+
+<!-- Page heading -->
+<div class="header">
+  <h1>How to train a GPT-2 model to create poetry</h1>
+</div>
+
+<div class="row">
+  <div class="main">
+
+    <!-- Introduction -->
+    <h2><u>Introduction</u></h2>
+    <p>This tutorial will teach you how to get a pretrained GPT-2 model to train on a poetry dataset to try and create samples that are similar to the ones that we train it on. 
+        <br><br>
+        Although this tutorial shows you how to train it on poetry you are able to train this model on any plain text.
+        <br><br>
+        Some prequisite knowledge is required to follow this tutorial. It is assumed that you have python installed as well as Anaconda (Or whatever program/method you use for creating 
+        virtual environments). It is also assumed that you have some sort of IDE or way of editing/writting python code. if you dont know what any of the previously stated things are I sugest
+        looking into them before starting this tutorial.
+        <br><br>
+        This tutorial is a combination of the walkthrough of the tutorial from <a href="https://medium.com/@ngwaifoong92/beginners-guide-to-retrain-gpt-2-117m-to-generate-custom-text-content-8bb5363d8b7f">Medium.com</a>
+        and some parts of the <a href="https://www.gwern.net/GPT-2">Gwern website.</a>
+    </p>
+ 
+    
+    <!-- Step 1 -->
+    <h3>
+      <u>Step 1 - Get a clone of the project</u>
+    </h3>
+    
+    <p>
+      The first step in this tutorial is to get the GIT clone of the project. I used Visual studio code to import a clone of the project and saved it to a folder in my desktop for easy access.
+      <br><br>
+      So make sure you have GIT installed from the following link: <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>
+      <br><br>
+      Although it may differ for your IDE to clone a project in visual studio code go to the view tab and select command palette:
+    </p>
+
+    <img src="Images/command palette.jpg" alt="command palette">
+
+    <p>
+      Or press Ctrl+Shift+P
+      <br><br>
+      Next type this into the command palette:
+    </p>
+
+    <img src="Images/Git Clone.png" alt="Git Clone">
+
+    <p>
+      And then the following link into the Repository URL: <a href="https://github.com/nshepperd/gpt-2.git">https://github.com/nshepperd/gpt-2.git</a>
+      <br><br>
+      Make sure you save it somewhere that you can easily access. 
+      <br><br>
+      You should now have a clone of the project which consists of a folder called gpt-2.
+      <br><br>
+      Unless you are using GPU training the next step is to copy the files named encode.py and train.py into the src folder. 
+    </p>
+
+    <!-- Step 2 -->
+    <h3>
+      <u>Step 2 - Setup python in a virtual environment</u>
+    </h3>
+
+    <p>
+      As tensor flow has not been updated for python 3.8.x we have to use python 3.7 for using it. To help me with creating virtual environments and other management I will use Anaconda navigator.
+      <br><br>
+      After installing anaconda x64 I opened the navigator to the main menu.
+      <br><br>  
+      <img src="Images/anaconda menu.png"  width = 40%; height = 40%; alt="Anaconda menu">
+      <br><br>
+      Next I selected the create new environment button and created an environment with python 3.7
+      <br><br>
+      <img src="Images/Venv create.png"  width = 30%; height = 30%; alt="Venv create menu">
+      <br><br>
+      Create an environment in anaconda and make sure you have python working in it by typing this into the cmd console:
+      <br><br>
+      <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 200px;">
+        <code>pyhton --version</code>
+      </p>
+
+      <br><br>
+      You should get “Pyhton 3.7.x” in the console (x dependant of the version of 3.7 you are using)
+      <br><br>
+      If you are getting an error about python not being recognised follow this fix otherwise you can ignore this part:
+      <br><br>  
+    </p>
+    
+    <!-- Python fix -->
+    <button class="accordion">Python not recognised error fix</button>
+    <div class="panel">
+      <p>
+        If you are getting the following error
+        <br><br>
+        <img src="Images/python not recognised.png"  width = 40%; height = 40%; alt="Python not recognised">
+        <br><br>
+        Then we need to define a python path for your system. To do this find where you have installed python. The easiest way to do this is to type python into your search bar and go to the source folder:
+        <br><br>
+        <img src="Images/python location.png" width = 30%; height = 30%; alt="python location">
+        <br><br>
+        <img src="Images/python location 2.png" width = 30%; height = 30%; alt="python location">
+        <br><br>
+        Copy the directory path of this folder. We will use this to point your computer to this folder when we are using python in cmd.
+        <br><br>
+        Next search for “Edit the system environment variables” in your search bar or find it in the control panel.
+        <br><br>
+        Go to environment settings:
+        <br><br>
+        <img src="Images/environment settings.png" width = 30%; height = 30%; alt="Environment settings">
+        <br><br>
+        And find the path variable in the system variable list
+        <br><br>
+        <img src="Images/system variables.png" width = 30%; height = 30%; alt="system variables">
+        <br><br>
+        Click edit on this variable and then new to create a new variable.
+        <br><br>
+        <img src="Images/create variable.png" width = 30%; height = 30%; alt="create variable">
+        <br><br>
+        This new variable should be the file path that you copied from earlier.
+        <br><br>
+        After doing this python should work in command line. You can check this by typing this into the CMD console.
+        <br><br>
+        <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 200px;">
+          <code>pyhton --version</code>
+        </p>
+        <br><br>
+        <img src="Images/pythin version.png" width = 30%; height = 30%; alt="python version">
+     </p>
+    </div>
+
+     <!-- Step 3 -->
+    <h3>
+      <u>Step 3 – install all the needed modules </u>
+    </h3>
+
+    <p>
+      Now we need to install a few modules. The modules we need to install are:
+      <br><br>
+      -	Fire 0.1.2
+      <br>
+      -	Regex 2017.4.5
+      <br>
+      -	Requests 2.21.0
+      <br>
+      -	Tqdm 4.31.1
+      <br>
+      -	Numpy
+      <br>
+      -	Tensorflow 1.14 (This is important any other version of TF will not work must be 1.14)
+      <br>
+      -	toposort
+      <br><br>
+      To install the modules, we use the following command in your venv command console:
+      <br><br>
+      <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 300px;">
+        <code>pip install *Name of module*</code>
+      </p>
+      <br><br>
+      You DO NOT need to put in the version of the module just the name, except for Tensorflow where you need to use this command:
+      <br><br>
+      <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 300px;">
+        <code>pip install tensorflow==1.14</code>
+      </p>
+      <br><br>
+      To make sure you have all the modules installed use this command to check your modules
+      <br><br>
+      <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 200px;">
+        <code>pip list</code> 
+      </p>
+      <br><br>
+    </p>
+
+     <!-- Step 4 -->
+     <h3>
+      <u>Step 4 – installing the model </u>
+    </h3>
+
+    <p>
+      Now we need to install the NN model that we will use for generating out poetry
+      <br><br>
+      To do this we first need to change our command line destination to inside our project folder. 
+      To do this go to where you downloaded the GIT clone and copy the path to the folder that holds the src folder. 
+      We can then change the directory by typing the following into the Venv command line:
+      <br><br>
+      <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 200px;">
+        <code>cd *Path*</code>
+      </p>
+      <br><br>
+      your command line should now look similar to this:
+      <br><br>
+      <img src="Images/cmd line path.png"; alt="cmd line path">
+      <br><br>
+      Now that we are in this folder, we can run the download model script. To do this we use this command:
+      <br><br>
+      <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 300px;">
+        <code>python download_model.py 117M </code>
+      </p>
+      <br><br>
+      To ensure this has been downloaded check the project folder. It should now have a new folder inside of it called models.
+      <br><br>
+    </p>
+
+    <!-- Step 5 -->
+    <h3>
+      <u>Step 5 – creating a training dataset  </u>
+    </h3>
+
+    <p>
+      As we are creating our own data set you can use any plain text (in English) to train the model. 
+      I will be using poetry however for this tutorial. I will show you the formatting of the dataset so you can create your own to train the model for different types of content.
+      <br><br>
+      To create this data set, create a normal notepad .txt document and put in your wanted text. Separate each different text with the following:
+      <br><br>
+      <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 300px;">
+        <code> <|endoftext|> </code>
+      </p>
+      <br><br>
+      Here is an example of what the break between text should look like should look like:
+      <br><br>
+      <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 400px;">
+        ……….
+        <br>
+        There are beautiful beeches down beyond the hill.
+        <br>
+        Will you always stand there shivering?
+        <br><br>
+
+        <|endoftext|>
+
+        <br><br>
+        Water ruffled and speckled by galloping wind
+        <br>
+        Which puffs and spurts it into tiny pashing breakers
+        <br>
+        Dashed with lemon-yellow afternoon sunlight.
+        <br>
+        The shining of the sun upon the water
+        <br>
+        Is like a scattering of gold crocus-petals
+        <br>
+        In a long wavering irregular flight.
+        <br>
+        ………..
+        <br>
+      </p>
+      Finally put this .txt file into the source folder of the project.
+      <br><br>
+    </p>
+
+    <!-- Step 6 -->
+    <h3>
+      <u>Step 6 – encoding the dataset for training   </u>
+    </h3>
+
+    <p>
+      In step 1 we copied the encode.py and train.py file into the source folder so we need to change 
+      a few lines of code for the following step to work otherwise it wont be able to find the a directory and will throw an error during encoding. 
+      <br><br>
+      Open up the encoder.py (not encode.py) and go to the get_encoder definition:
+      <br><br>
+      <img src="Images/code change 1 before.png"; alt="Code change 1 before">
+      <br><br>
+      We need to give the correct path to the open command as a raw string. 
+      To do this replace ‘models’ with the path to the models folder that is in the project folder. Then put an r before the apostrophe:
+      <br><br>
+      <img src="Images/code change 1 after.png"; alt="Code change 1 after">
+      <br><br>
+      Once we have done this we can go back to our command line and Cd into the src folder. We then run this command:
+      <br><br>
+      <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 500px;">
+        <code> pyhton encode.py *Name of data set*.txt *Name of data set*.npz  </code>
+      </p>
+      <br><br>
+      For the name of the data set just put in the name of the .txt file. The .npz file can have a different name if you want.
+      <br><br>
+    </p>
+
+    <!-- Step 7 -->
+    <h3>
+      <u>Step 7 – training the model  </u>
+    </h3>
+
+    <p>
+      Now we need to train our model so we can start producing samples. Before we do this there’s a bit of code we need to adjust so the model can find 
+      the correct directory’s and then we need to create a few directory’s for the model to use.
+      <br><br>
+      In the src folder add two new folders “Checkpoint” and “Samples”. 
+      <br><br>
+      Now open the train.py file and go to lines 19 and 20:
+      <br><br>
+      <img src="Images/Checkpoint and sample path.png"; width = 20%; height = 20%; alt="checkpoint and sample path">
+      <br><br>
+      Within these apostrophise put the root of your respective folders and then put an r before each one
+      (This parses it to a raw string so the path will work) so for me it would now look like this:
+      <br><br>
+      <img src="Images/Checkpoint and sample path after.png"; width = 50%; height = 50%; alt="checkpoint and sample path after">
+      <br><br>
+      Next we need to go to the main method (it starts at line 72) and put in the path to our model’s folder.
+       This is the folder that was created when you downloaded the model in the earlier steps. The line we need to add this is line 76: 
+      <br><br>
+      <img src="Images/code change 2 before.png"; width = 40%; height = 40%; alt="checkpoint and sample path after">
+      <br><br>
+      <img src="Images/code change 2 after.png"; width = 60%; height = 60%; alt="checkpoint and sample path after">
+      <br><br>
+      The next place we need to add this path is in some code around lines 160
+      <br><br>
+      <img src="Images/code change 3 before.png"; width = 40%; height = 40%; alt="checkpoint and sample path after">
+      <br><br>
+      <img src="Images/code change 3 after.png"; width = 40%; height = 40%; alt="checkpoint and sample path after">
+      <br><br>
+      The last place we need to add the root is around line 200
+      <br><br>
+      <img src="Images/code change 4 before.png"; width = 40%; height = 40%; alt="checkpoint and sample path after">
+      <br><br>
+      <img src="Images/code change 4 after.png"; width = 40%; height = 40%; alt="checkpoint and sample path after">
+      <br><br>
+      Now the last step is to execute the training command, it is the following:
+      <br><br>
+      <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 500px;">
+        <code> python train.py --dataset *Name of dataset*  </code>
+      </p>
+      <br><br>
+      And that’s it. If you get the following you have done everything correctly:
+      <br><br>
+      <img src="Images/triaining.png";  alt="checkpoint and sample path after">
+      <br><br>
+      You will most likely have lots of errors in your command window but as long as you get to what is displayed above you can ignore any errors.
+      <br><br>
+      To stop training you must have the window selected and press Ctrl+C. 
+      <br><br>
+      To continue to train your model you can simply repeat this command and it will resume from where it was stoped:
+      <br><br>
+      <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 500px;">
+        <code> python train.py --dataset *Name of dataset*  </code>
+      </p>
+      <br><br>
+    </p>
+
+    
+    
+  </div>
+</div>
+
+<div class="footer">
+  <h2></h2>
+</div>
+
+</body>
+</html>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+  
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+  </script>
