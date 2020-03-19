@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v4.12.2, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.12.2, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
+  <meta name="description" content="How to make a simple neural network">
+  
+  <title>Making a neural network</title>
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  
+  
+  
+</head>
+<body>
+  <section class="menu cid-rRU8yhRKu5" once="menu" id="menu1-24">
+
+    
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="Home.html">
+                        Computer Science Challenges 40259070</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="Research doc.html"><span class="mbri-pages mbr-iconfont mbr-iconfont-btn"></span>Research Doc</a>
+                </li><li class="nav-item"><a class="nav-link link text-white display-4" href="Diary.html"><span class="mbri-edit mbr-iconfont mbr-iconfont-btn"></span>Diary</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="About.html">
+                        <span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                        About</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="Home.html"><span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>Home</a></li></ul>
+            
+        </div>
+    </nav>
+</section>
+
+<section class="engine"><a href="https://mobirise.info/n">free simple website templates</a></section><section once="footers" class="cid-rRTAM854L2" id="footer6-25">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="col-12">
+                <p class="mbr-text mb-0 mbr-fonts-style display-7">Oisincassidydawson179@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section content4 cid-rS4XYUvcXK" id="content4-26">
+
+    
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+                    Making a neural network</h2>
+                <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">
+                    The following tutorial will show you how to create a basic neural netowork to solve the OR gate problem</h3>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section content7 cid-rS4YBHE9gM" id="content7-29">
+          
+    
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="col-12 col-md-12">
+                <div class="media-container-row">
+                    <div class="media-content">
+                        <div class="mbr-section-text">
+                            <p class="mbr-text align-right mb-0 mbr-fonts-style display-7">The simplest neural network is called the perception neural network(P). To understand the basics of neural networks I will make a perception network in python3.
+<br>
+<br>My network will be used to solve the OR gate problem. It will have 4 neurons overall, 2 input, 1 bias and 1 output. There will be 3 weights to connect the neurons. This is what my NN will look like:&nbsp;</p>
+                        </div>
+                    </div>
+                    <div class="mbr-figure" style="width: 25%;">
+                     <img src="assets/images/neural-network-307x311.png" alt="Mobirise" title="">  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content1 cid-rS4YOuQWoT" id="content1-2a">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>This type of network is called a classifier as it is most useful for classifying things. For example, if we look at the logic table for an OR gate:</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cid-rS4YYskTR9" id="image1-2b">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 43%;">
+            <img src="assets/images/or-gate-447x169.png" width="1400" alt="Mobirise" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="mbr-section article content1 cid-rS4Ze6OnrE" id="content1-2c">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>We have 2 inputs (A and B) and one output. Given 2 inputs our NN has to classify which output is expected. A classifier is able to solve a classification problem where when plotted in cartesian coordinates the separate classifications can be separated by a single line. So if we use the A and B as our XY coordinates we get a graph like this:&nbsp;</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cid-rS4Zplyheo" id="image1-2d">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 24%;">
+            <img src="assets/images/or-graph-269x260.png" width="1400" alt="Mobirise" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="mbr-section article content1 cid-rS4ZwpsjtR" id="content1-2e">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>This is a problem that can be solved with a classifier NN.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content1 cid-rS4ZBbLwnx" id="content1-2f">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-5 col-md-12"><p><strong>The code</strong></p></div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content1 cid-rS4ZHaWeoE" id="content1-2g">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>The first thing we need to do is import the library’s we need and to classify the variables for the NN:</p></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12">
+                <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 1000px;">
+                <code>Import numpy, random, os<br>
+                      lr = 1	    # This is the learning rate of the NN<br>
+                      bias = 1    # The value of the bias neuron<br>
+                      weights = [random.random(),random.random(),random.random()] # This creates 3 random weights and puts them in a list, 1 for each neuron connection<br>
+                    </code>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content1 cid-rS50Q05NpP" id="content1-2l">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>Next, we must create the function that handles the neuron calculation. So, we have to multiply the inputs by the weights and add them, multiply the bias by the weights and add it and then finally apply the activation function. In this step we will also create the functionality to teach the NN.</p></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12">
+                <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 1000px;">
+                <code>Def Classifier(x1,x2,expectedOutput) :<br>
+                    &nbsp;# Calculate neuron <br>
+                    &nbsp;output =  x1*weights[0] + x2*weights[1]+bias*weights[2]<br>
+                    &nbsp;# Activation function<br>
+                    &nbsp;if output > 0 :<br>
+                    &nbsp;&nbsp;output = 1<br>
+                    &nbsp;else :<br>
+                    &nbsp;&nbsp;output = 0<br>
+                    &nbsp;# Create a metric to track error amount<br>
+                    &nbsp;error = expectedOutput – output<br>
+                    &nbsp;# Modify the weights based on the error <br>
+                    &nbsp;weights[0] += error * x1 * lr   <br>
+                    &nbsp;weights[1] += error * x2 * lr   <br>
+                    &nbsp;weights[2] += error * bias * lr   <br>
+                    </code>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content1 cid-rS5g0tPLRL" id="content1-2m">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>Here we create the function with 3 inputs, x1,x2 and expectedOutput. The expected output is used in the learning process of the NN as we don’t want to tell it how to solve the problem we want to tell it what it should output given certain inputs so it learns how to turn its inputs to an expected outcome. 
+</p><p>We are not using the sigmoid activation function here as our expected output will only ever be 1 or 0, using the sigmoid function would return a decimal value close to 1 or 0 depending on what the output should be. This activation function is called the Heaviside function and its only purpose it to turn any +ve output to 1 and any -ve output to 0. Mathematically this is what the function is:
+</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cid-rS5gfpOtVV" id="image1-2n">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 49%;">
+            <img src="assets/images/math-func-538x114.png" width="1400" alt="Mobirise" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="mbr-section article content1 cid-rS5glEYw4Z" id="content1-2o">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>If we where to use the sigmoid function, we would program it like this:&nbsp;</p></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12">
+                <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 1000px;">
+                <code># Sigmoid function<br>
+                    output = 1/(1+numpy.exp(-output))<br> 
+                    </code>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content1 cid-rS5gr9aOHW" id="content1-2p">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>After applying our activation function, we need to create the functionality to modify the weights during the learning process. To do this we create a variable called error, this takes the given output away from the actual answer and uses this difference to change the weights in hopes of converging closer on the correct weight for the problem. Now that we have the functionality set up we have to train the NN.</p></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12">
+                <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 1000px;">
+                <code>for i in range(50) :<br> 
+                    &nbsp;Classifier(1,1,1)<br> 
+                    &nbsp;Classifier(1,0,1)<br> 
+                    &nbsp;Classifier(0,1,1)<br> 
+                    &nbsp;Classifier(0,0,0)<br>
+                    </code>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content1 cid-rS5gx0MIi9" id="content1-2q">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>This is the training process, normally we don’t want to give the network its entire list of possibilities, but as there are only 4 cases it should be fine in this scenario. We choose training time based on how we want to train the network. In this Example we train the network on each possibility 50 times. Undertraining occurs in incorrect answers from the network while over training can make the network too specific to the training set.&nbsp;</p></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12">
+                <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 1000px;">
+                <code>exit = False<br>
+                    while exit == False:<br>
+                    &nbsp;print(“Input var X:”)<br>
+                    &nbsp;x = int(input())<br>
+                    &nbsp;print(“input var Y:”)  <br>
+                    &nbsp;y = int(input())<br><br>
+                     
+                    &nbsp;output = x*weights[0] + y*weights[1] + bias*weights[2]<br><br>
+                     
+                    &nbsp;#Activation function<br>
+                    &nbsp;If output > 0 :<br>
+                    &nbsp;&nbsp;Output = 1<br>
+                    &nbsp;else :<br>
+                    &nbsp;&nbsp;output = 0<br><br>
+                     
+                    &nbsp;print(x, “or”, y, “is :”,output)<br><br>
+                        
+                    &nbsp;if exit == True :<br>
+                    &nbsp;&nbsp;break<br>
+                    
+                    </code>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content1 cid-rS5gDelPzv" id="content1-2r">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>This last piece of code is so that user can enter the X and Y variables to check to make sure it works.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content1 cid-rS5h0AMHqk" id="content1-2t">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>This is the console after compiling the code and trying all possible combinations of the OR gate.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cid-rS5h5VslKk" id="image1-2u">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 60%;">
+            <img src="assets/images/out-585x409.png" width="1400" alt="Mobirise" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="mbr-section article content1 cid-rS5hddi9D0" id="content1-2v">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>Here we can see that the weights are displayed before and after training. The only weight that changes is the weight on the bias. We can also see the network correct answers every scenario.</p></div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  
+  
+</body>
+</html>
