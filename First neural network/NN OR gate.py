@@ -20,10 +20,10 @@ def Perceptron(input1, input2, ExpOutput) :
     weights[2] += error * bias * lr
 
 for i in range(50):
-        Perceptron(1,1,1) #true or true
-        Perceptron(1,0,1) #true or false
-        Perceptron(0,1,1) #false or true
-        Perceptron(0,0,0) #false or false  
+    Perceptron(1,1,1) #true or true
+    Perceptron(1,0,1) #true or false
+    Perceptron(0,1,1) #false or true
+    Perceptron(0,0,0) #false or false  
 
 print("After training:", weights[0], " ",weights[1], " ",weights[2])
 
