@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- Site made with Mobirise Website Builder v4.12.2, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.12.2, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
+  <meta name="description" content="Website Builder Description">
+  
+  <title>GPT-2 Model</title>
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  
+  
+  
+</head>
+<body>
+  <section class="menu cid-rRU8yhRKu5" once="menu" id="menu1-44">
+
+    
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="index.html">
+                        Computer Science Challenges 40259070</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="Research doc.html"><span class="mbri-pages mbr-iconfont mbr-iconfont-btn"></span>Research Doc</a>
+                </li><li class="nav-item"><a class="nav-link link text-white display-4" href="Diary.html"><span class="mbri-edit mbr-iconfont mbr-iconfont-btn"></span>Diary</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="About.html">
+                        <span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>
+                        About</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="index.html"><span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>Home</a></li></ul>
+            
+        </div>
+    </nav>
+</section>
+
+<section class="engine"><a href="https://mobirise.info/h">create a web page for free</a></section><section once="footers" class="cid-rRTAM854L2" id="footer6-43">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="col-12">
+                <p class="mbr-text mb-0 mbr-fonts-style display-7">Oisincassidydawson179@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section content4 cid-rWCjSXh2SK" id="content4-46">
+
+    
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="title col-12 col-md-8">
+                <h2 class="align-center pb-3 mbr-fonts-style display-2">
+                    How to setup a GPT-2 model for training</h2>
+                <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5">
+                    This tutorial will take you through setting up and training a GPT-2 model for producing samples like the training data</h3>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content1 cid-rWCrdeZd80" id="content1-4v">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p><strong>Introduction:</strong></p><p>This tutorial will teach you how to get a pretrained GPT-2 model to train on a poetry dataset to try and create samples that are similar to the ones that we train it on.
+</p><p>Although this tutorial shows you how to train it on poetry you are able to train this model on any plain text.
+</p><p>Some prequisite knowledge is required to follow this tutorial. It is assumed that you have python installed as well as Anaconda (Or whatever program/method you use for creating virtual environments). It is also assumed that you have some sort of IDE or way of editing/writting python code. if you dont know what any of the previously stated things are I sugest looking into them before starting this tutorial.
+</p><p>This tutorial is a combination of the walkthrough of the tutorial from Medium.com and some parts of the Gwern website.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section content8 cid-rWCrrMN2Ys" id="content8-4w">
+
+    
+
+    <div class="container">
+        <div class="media-container-row title">
+            <div class="col-12 col-md-8">
+                <div class="mbr-section-btn align-center"><a class="btn btn-primary display-4" href="https://medium.com/@ngwaifoong92/beginners-guide-to-retrain-gpt-2-117m-to-generate-custom-text-content-8bb5363d8b7f">Medium article</a>
+                    <a class="btn btn-primary display-4" href="https://www.gwern.net/GPT-2">Gwern article</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content1 cid-rWCrJnWDZ9" id="content1-4x">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p><strong><u>Step 1 - Get a clone of the project</u></strong></p><p>The first step in this tutorial is to get the GIT clone of the project. I used Visual studio code to import a clone of the project and saved it to a folder in my desktop for easy access.
+</p><p>So make sure you have GIT installed from the following link: https://git-scm.com/downloads
+</p><p>Although it may differ for your IDE to clone a project in visual studio code go to the view tab and select command palette:</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cid-rWCsdPw1q5" id="image1-4z">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 55%;">
+            <img src="assets/images/command-palette-486x148.jpg" width="1400" alt="Mobirise" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="mbr-section article content1 cid-rWCslZ5nwt" id="content1-51">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>Or press Ctrl+Shift+P
+</p><p>Next type this into the command palette:
+</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cid-rWCsjNlgLo" id="image1-50">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 66%;">
+            <img src="assets/images/git-clone-625x75.png" width="1400" alt="Mobirise" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="mbr-section article content1 cid-rWCsyIEvTJ" id="content1-52">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>And then the following link into the Repository URL: https://github.com/nshepperd/gpt-2.git
+</p><p>Make sure you save it somewhere that you can easily access.
+</p><p>You should now have a clone of the project which consists of a folder called gpt-2.
+</p><p>Unless you are using GPU training the next step is to copy the files named encode.py and train.py into the src folder.
+</p><p><strong><u>Step 2 - Setup python in a virtual environment
+</u></strong></p><p>As tensor flow has not been updated for python 3.8.x we have to use python 3.7 for using it. To help me with creating virtual environments and other management I will use Anaconda navigator.
+</p><p>After installing anaconda x64 I opened the navigator to the main menu.</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cid-rWCsLfgsX1" id="image1-53">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 59%;">
+            <img src="assets/images/anaconda-menu-1158x624.png" width="1400" alt="Mobirise" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="mbr-section article content1 cid-rWCsWB0UBp" id="content1-54">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>Next I selected the create new environment button and created an environment with python 3.7</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cid-rWCt4el8FO" id="image1-55">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 50%;">
+            <img src="assets/images/venv-create-920x488.png" width="1400" alt="Mobirise" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="mbr-section article content1 cid-rWCtrlmVp1" id="content1-56">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>Create an environment in anaconda and make sure you have python working in it by typing this into the cmd console:</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content1 cid-rWCtPTYcyc" id="content1-57">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>You should get “Pyhton 3.7.x” in the console (x dependant of the version of 3.7 you are using)
+</p><p>If you are getting an error about python not being recognised follow the fix tutorial I have provided</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section content8 cid-rWCua7W1O7" id="content8-58">
+
+    
+
+    <div class="container">
+        <div class="media-container-row title">
+            <div class="col-12 col-md-8">
+                <div class="mbr-section-btn align-center"><a class="btn btn-primary display-4" href="page8.html">Pyhton fix</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section article content1 cid-rWCuihUT4h" id="content1-59">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p><strong><u>Step 3 – install all the needed modules
+</u></strong></p><p>Now we need to install a few modules. The modules we need to install are:
+</p><p>- Fire 0.1.2
+</p><p>- Regex 2017.4.5
+</p><p>- Requests 2.21.0
+</p><p>- Tqdm 4.31.1
+</p><p>- Numpy</p><p>- Tensorflow 1.14 (This is important any other version of TF will not work must be 1.14)
+</p><p>
+</p><p>- toposort
+</p><p>
+</p><p>To install the modules, we use the following command in your venv command console:</p></div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="media-container-row">
+        <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12">
+            <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 1000px;">
+            <code>
+                pip install *Name of module*
+                </code>
+            </p>
+        </div>
+    </div>
+</div>
+
+<section class="mbr-section article content1 cid-rWCutE96qR" id="content1-5a">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>You DO NOT need to put in the version of the module just the name, except for Tensorflow where you need to use this command:</p></div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="media-container-row">
+        <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12">
+            <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 1000px;">
+            <code>
+                pip install tensorflow==1.14
+                </code>
+            </p>
+        </div>
+    </div>
+</div>
+
+<section class="mbr-section article content1 cid-rWCuu54KRq" id="content1-5b">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p><span style="font-size: 1rem;">To make sure you have all the modules installed use this command to check your modules</span><br></p></div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="media-container-row">
+        <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12">
+            <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 1000px;">
+            <code>
+                pip list
+                </code>
+            </p>
+        </div>
+    </div>
+</div>
+
+<section class="mbr-section article content1 cid-rWCuGwWPLR" id="content1-5c">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p><strong><u>Step 4 – installing the model
+</u></strong></p><p>Now we need to install the NN model that we will use for generating out poetry
+</p><p>To do this we first need to change our command line destination to inside our project folder. To do this go to where you downloaded the GIT clone and copy the path to the folder that holds the src folder. We can then change the directory by typing the following into the Venv command line:</p></div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="media-container-row">
+        <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12">
+            <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 1000px;">
+            <code>
+                cd *Path*
+                </code>
+            </p>
+        </div>
+    </div>
+</div>
+
+<section class="mbr-section article content1 cid-rWCuPhGUlY" id="content1-5d">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>your command line should now look similar to this:</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cid-rWCuZIcEhz" id="image1-5e">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 78%;">
+            <img src="assets/images/cmd-line-path-1065x53.png" width="1400" alt="Mobirise" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="mbr-section article content1 cid-rWCv9A0SDh" id="content1-5f">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>Now that we are in this folder, we can run the download model script. To do this we use this command:</p></div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="media-container-row">
+        <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12">
+            <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 1000px;">
+            <code>
+                python download_model.py 117M
+                </code>
+            </p>
+        </div>
+    </div>
+</div>
+
+<section class="mbr-section article content1 cid-rWCvgoXrSA" id="content1-5g">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>To ensure this has been downloaded check the project folder. It should now have a new folder inside of it called models.
+</p><p><strong><u>Step 5 – creating a training dataset
+</u></strong></p><p>As we are creating our own data set you can use any plain text (in English) to train the model. I will be using poetry however for this tutorial. I will show you the formatting of the dataset so you can create your own to train the model for different types of content.
+</p><p>To create this data set, create a normal notepad .txt document and put in your wanted text. Separate each different text with the following:</p></div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="media-container-row">
+        <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12">
+            <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 1000px;">
+            <code>
+                <|endoftext|>
+                </code>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<section class="mbr-section article content1 cid-rWCvqnNVye" id="content1-5h">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>Here is an example of what the break between text should look like should look like:</p></div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="media-container-row">
+        <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12">
+            <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 1000px;">
+            <code>
+                ……….</br>
+                There are beautiful beeches down beyond the hill.</br>
+                Will you always stand there shivering?</br></br>
+
+                <|endoftext|></br></br>
+
+                Water ruffled and speckled by galloping wind</br>
+                Which puffs and spurts it into tiny pashing breakers</br>
+                Dashed with lemon-yellow afternoon sunlight.</br>
+                The shining of the sun upon the water</br>
+                Is like a scattering of gold crocus-petals</br>
+                In a long wavering irregular flight.</br>
+                ………..
+                </code>
+            </p>
+        </div>
+    </div>
+</div>
+
+<section class="mbr-section article content1 cid-rWCvwaMUbG" id="content1-5i">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>Finally put this .txt file into the source folder of the project.</p><p><strong><u>Step 6 – encoding the dataset for training
+</u></strong></p><p>In step 1 we copied the encode.py and train.py file into the source folder so we need to change a few lines of code for the following step to work otherwise it wont be able to find the a directory and will throw an error during encoding.
+</p><p>Open up the encoder.py (not encode.py) and go to the get_encoder definition:</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cid-rWCAAvNvsO" id="image1-5j">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 76%;">
+            <img src="assets/images/code-change-1-before-709x195.png" width="1400" alt="Mobirise" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="mbr-section article content1 cid-rWCADidPDn" id="content1-5l">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>We need to give the correct path to the open command as a raw string. To do this replace ‘models’ with the path to the models folder that is in the project folder. Then put an r before the apostrophe:</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cid-rWCABj4GYR" id="image1-5k">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 88%;">
+            <img src="assets/images/code-change-1-after-1185x191.png" width="1400" alt="Mobirise" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="mbr-section article content1 cid-rWCAEfgKsA" id="content1-5m">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>Once we have done this we can go back to our command line and Cd into the src folder. We then run this command:</p></div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="media-container-row">
+        <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12">
+            <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 1000px;">
+            <code>
+                pyhton encode.py *Name of data set*.txt *Name of data set*.npz
+                </code>
+            </p>
+        </div>
+    </div>
+</div>
+
+<section class="mbr-section article content1 cid-rWCAF3fDi6" id="content1-5n">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>For the name of the data set just put in the name of the .txt file. The .npz file can have a different name if you want.
+</p><p><strong><u>Step 7 – training the model
+</u></strong></p><p>Now we need to train our model so we can start producing samples. Before we do this there’s a bit of code we need to adjust so the model can find the correct directory’s and then we need to create a few directory’s for the model to use.
+</p><p>In the src folder add two new folders “Checkpoint” and “Samples”.
+</p><p>Now open the train.py file and go to lines 19 and 20:</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cid-rWCBlldyjW" id="image1-5o">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 43%;">
+            <img src="assets/images/checkpoint-and-sample-path-569x145.png" width="1400" alt="Mobirise" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="mbr-section article content1 cid-rWCBDjPlpU" id="content1-5w">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>Within these apostrophise put the root of your respective folders and then put an r before each one (This parses it to a raw string so the path will work) so for me it would now look like this:</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cid-rWCBnbejTS" id="image1-5q">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 82%;">
+            <img src="assets/images/checkpoint-and-sample-path-after-1466x149.png" width="1400" alt="Mobirise" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="mbr-section article content1 cid-rWCBEdzKqy" id="content1-5x">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>Next we need to go to the main method (it starts at line 72) and put in the path to our model’s folder. This is the folder that was created when you downloaded the model in the earlier steps. The line we need to add this is line 76:</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cid-rWCBobUsR3" id="image1-5s">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 71%;">
+            <img src="assets/images/code-change-2-before-1277x259.png" width="1400" alt="Mobirise" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="cid-rWCBoAI3jY" id="image1-5t">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 85%;">
+            <img src="assets/images/code-change-2-after-1379x165.png" width="1400" alt="Mobirise" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="mbr-section article content1 cid-rWCBEGwDzG" id="content1-5y">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>The next place we need to add this path is in some code around lines 160</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cid-rWCBpXSVIj" id="image1-5v">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 66%;">
+            <img src="assets/images/code-change-3-before-1081x423.png" width="1400" alt="Mobirise" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="cid-rWCCgUJNhJ" id="image1-5z">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 81%;">
+            <img src="assets/images/code-change-3-after-1377x299.png" width="1400" alt="Mobirise" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="mbr-section article content1 cid-rWCCiH0iQY" id="content1-60">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>The last place we need to add the root is around line 200</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cid-rWCCjJl1kA" id="image1-61">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 66%;">
+            <img src="assets/images/code-change-4-before-1179x490.png" width="1400" alt="Mobirise" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="cid-rWCCk37Pd1" id="image1-62">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 84%;">
+            <img src="assets/images/code-change-4-after-1379x324.png" width="1400" alt="Mobirise" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="mbr-section article content1 cid-rWCClN45bW" id="content1-63">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p><span style="font-size: 1rem;">Now the last step is to execute the training command, it is the following:</span><br></p></div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="media-container-row">
+        <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12">
+            <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 1000px;">
+            <code>
+                python train.py --dataset *Name of dataset*
+                </code>
+            </p>
+        </div>
+    </div>
+</div>
+
+<section class="mbr-section article content1 cid-rWCCmSChQV" id="content1-64">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>And that’s it. If you get the following you have done everything correctly:</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="cid-rWCCoGhfMT" id="image1-65">
+
+    
+
+    <figure class="mbr-figure container">
+        <div class="image-block" style="width: 90%;">
+            <img src="assets/images/triaining-1466x213.png" width="1400" alt="Mobirise" title="">
+            
+        </div>
+    </figure>
+</section>
+
+<section class="mbr-section article content1 cid-rWCCpvNZOx" id="content1-66">
+    
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12"><p>You will most likely have lots of errors in your command window but as long as you get to what is displayed above you can ignore any errors.
+</p><p>To stop training you must have the window selected and press Ctrl+C.
+</p><p>To continue to train your model you can simply repeat this command and it will resume from where it was stoped:</p></div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="media-container-row">
+        <div class="mbr-text col-12 mbr-fonts-style display-7 col-md-12">
+            <p style="border:1px; border-style:solid; border-color:rgb(0, 0, 0); padding: 3px; width: 1000px;">
+            <code>
+                python train.py --dataset *Name of dataset*
+                </code>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  
+  
+</body>
+</html>
